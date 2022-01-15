@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body onload='document.form1.text1.focus()'>
+    <div class="mail">
+        <h2>Please enter your credentials</h2>
+        <form name="form1" action="#" onsubmit="check_empty()">
+            <ul type="none">
+                Email<sup>*</sup>
+                <li><input type='text' name='text1' /></li>
+                Password<sup>*</sup>
+                <li><input type="password" name="pass1" id=""></li>
+                <li class="submit"><input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)" /></li>
+
+            </ul>
+        </form>
+    </div>
+    <script>
+        function ValidateEmail(inputText) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (inputText.value.match(mailformat)) {
+                return true;
+            } else {
+                alert("Please enter Email in valid Form \r\n abc@xyz.com");
+
+                //auto focus at invalid field
+                document.form1.text1.focus();
+                return false;
+            }
+        }
+
+        function check_empty() {
+            var empt = document.forms["form1"]["pass1"].value;
+            if (empt == "") {
+                alert("Field marked * are compulsory");
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>

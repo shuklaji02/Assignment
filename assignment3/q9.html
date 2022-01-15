@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  
+    <title>q9</title>
+    <style>
+        body {
+            background-color: rgb(189, 139, 236);
+            font-size: 30px;
+        }
+        
+        img {
+            height: 80px;
+            width: 80px;
+        }
+        
+        table tr td {
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <table>
+        <tr>
+            <th>You </th>
+            <th>Computer</th>
+        </tr>
+        <tr>
+            <td><img id="player" src="paper (3).jpg" alt=""></td>
+            <td><img id="computer" src="rock.jpg" alt=""></td>
+
+        </tr>
+        <tr>
+            <td><img class="select" id="scisssor" src="scissors (1).jpg" alt=""></td>
+            <td><img class="select" id="paper" src="paper (3).jpg" alt=""></td>
+            <td><img class="select" id="rock" src="rock.jpg" alt=""></td>
+        </tr>
+    </table>
+    <h1 class="dec">dec</h1>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    var choice = ["scissor", "paper", "rock"]
+
+    var compChoice;
+    // let pScore;
+    // let cScore;
+
+    // window.onload = () => {
+    // if (sessionStorage.getItem('playerScore') === null) {
+    // pScore = 0;
+    // cScore = 0;
+    // }
+    // else {
+    // getScore();
+    // }
+    // }
+
+    // window.onunload = () => setScore();
+
+    function comphoice() {
+        var randomNo = Math.floor(Math.random() * 3);
+        compChoice = choice[randomNo];
+    }
+
+    $("#scisssor").click(function() {
+        $("#player").attr("src", "scissors (1).jpg");
+        comphoice();
+        if (compChoice === "paper") {
+            $("#computer").attr("src", "paper (3).jpg")
+            $(".dec").text("u win")
+            pScore++;
+        }
+        if (compChoice === "scissor") {
+            $("#computer").attr("src", "scissors (1).jpg");
+            $(".dec").text("tie")
+        } else {
+            $("#computer").attr("src", "rock.jpg");
+            $(".dec").text("u lose")
+            cScore++;
+        }
+    });
+    $("#paper").click(function() {
+        $("#player").attr("src", "paper (3).jpg")
+        comphoice();
+        if (compChoice === "paper") {
+            $("#computer").attr("src", "paper (3).jpg")
+            $(".dec").text("tie")
+        }
+        if (compChoice === "scissor") {
+            $("#computer").attr("src", "scissors (1).jpg");
+            $(".dec").text("u lose")
+            cScore++;
+        } else {
+            $("#computer").attr("src", "rock.jpg");
+            $(".dec").text("u win")
+            pScore++;
+        }
+    });
+    $("#rock").click(function() {
+        $("#player").attr("src", "rock.jpg");
+        comphoice();
+        if (compChoice === "paper") {
+            $("#computer").attr("src", "paper (3).jpg")
+            $(".dec").text("u lose")
+            cScore++;
+        }
+        if (compChoice === "scissor") {
+            $("#computer").attr("src", "scissors (1).jpg");
+            $(".dec").text("u win")
+            pScore++;
+        } else {
+            $("#computer").attr("src", "rock.jpg");
+            $(".dec").text("tie")
+        }
+    });
+
+
+    // function setScore() {
+    // sessionStorage.setItem("playerScore", pScore);
+    // sessionStorage.setItem("computerScore", cScore);
+    // }
+
+    // function getScore() {
+    // pScore = sessionStorage.getItem('playerScore');
+    // cScore = sessionStorage.getItem('computerScore');
+    // }
+
+    // $("img").click(function () {
+
+    // console.log(pScore);
+    // console.log(cScore);
+    // })
+</script>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        #myjob {
+            background-image: url('search.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 40%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+        
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+        
+        #myTable th,
+        #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+        
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        #myTable tr.header,
+        #myTable tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Job Finder</h2>
+
+    <input class="search" type="text" id="myjob" onkeyup="filter_job()" placeholder="Filter by profession..">
+
+    <table id="myTable">
+        <tr class="header">
+            <th style="width:60%;">Profession</th>
+            <th style="width:40%;">Salary</th>
+        </tr>
+        <tr>
+            <td>Human resource intern</td>
+            <td>30k-50k</td>
+        </tr>
+        <tr>
+            <td>Sales and marketing intern</td>
+            <td>30k-45k</td>
+        </tr>
+        <tr>
+            <td>Campus ambassodor</td>
+            <td>10k-25k</td>
+        </tr>
+        <tr>
+            <td>Online Tutor</td>
+            <td>40k-50k</td>
+        </tr>
+        <tr>
+            <td>Web developer</td>
+            <td>60k-70k</td>
+        </tr>
+        <tr>
+            <td>Associate Financial Analyst</td>
+            <td>25k-30k</td>
+        </tr>
+        <tr>
+            <td>Postdoctoral Researcher</td>
+            <td>58k-65k</td>
+        </tr>
+        <tr>
+            <td>Software developer</td>
+            <td>90k-1.5lac</td>
+        </tr>
+        <tr>
+            <td>SLEEPING</td>
+            <td>1.5lac-5lac</td>
+        </tr>
+    </table>
+
+    <script>
+        function filter_job() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myjob");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

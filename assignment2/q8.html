@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q8</title>
+
+    <style media="screen">
+        div {
+            position: relative;
+            background-color: #97BFB4;
+            width: 500px;
+            left: 250px;
+            height: 750px;
+            top: 10px;
+            border-radius: 8px;
+        }
+        
+        form {
+            padding-bottom: 10px;
+        }
+        
+        label {
+            display: block;
+            padding-top: 20px;
+            margin: 10px;
+        }
+        
+        input[type=text],
+        select {
+            display: inline-block;
+            width: 50%;
+            border-radius: 6px;
+            padding: 10px 16px;
+            margin-left: 10px;
+            margin-bottom: 4px;
+        }
+        
+        input[type=submit] {
+            position: relative;
+            top: 30px;
+            left: 300px;
+            display: block;
+            padding: 10px;
+            width: 100px;
+            border-radius: 4px;
+            border-style: groove;
+            border: 1px solid;
+            font-size: 20px;
+            background-color: #9AE66E;
+        }
+        
+        input[type=text]:focus {
+            border: 3px solid #9A0680;
+        }
+        
+        body {
+            font-family: Century Gothic;
+        }
+        
+        sup {
+            color: red;
+        }
+        
+        .g {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="/action_page.php">
+            <label for="fname">First Name<sup>*</sup></label>
+            <input type="text" id="fname" name="First Name" placeholder="First Name">
+            <label for="midname">Middle Name</label>
+            <input type="text" id="midname" name="Middle Name" placeholder="Middle Name">
+            <label for="lname">Last Name<sup>*</sup></label>
+            <input type="text" id="lname" name="Last Name" placeholder="Last Name"><br /><br />
+            <label for="gender" class="g">Gender:</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <input type="radio" name="gender" value="other"> Other
+            <label for="sname">School Name<sup>*</sup></label>
+            <input type="text" id="sname" name="School Name" placeholder="School Name">
+            <label for="cname">College Name<sup>*</sup></label>
+            <input type="text" id="cname" name="College Name" placeholder="College Name">
+            <label for="pob">Place Of Birth<sup>*</sup></label>
+            <select title="place" id="city" name="city">
+                <option value="Select" checked>Select</option>
+                <option value="Rourkela">India</option>
+                <option value="Joda">Japan</option>
+                <option value="Khorda">Korea</option>
+                <option value="Bhubaneswar">Russia</option>
+                <option value="Puri">Dubai</option>
+                <input type="submit" value="Confirm">
+            </select>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

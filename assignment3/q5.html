@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <!-- Slide up/down -->
+    <p class="slide">This para will slide </p>
+    <button class="b1">Slide Up</button>
+    <button class="b2">Slide Down</button>
+    <br><br>
+    <!-- Animation -->
+    <button class="animate">animate</button>
+    <div class="box" style="background-color: blueviolet; height: 50px; width: 50px;"></div>
+
+    <!-- Fade in -->
+    <p class="fade">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, reiciendis!</p>
+    <button class="f_out">Fade out</button>
+    <button class="f_in">Fade in</button>
+
+    <!-- hide & show -->
+    <p class="hide">This will hide</p>
+    <button class="b_hide">Hide</button>
+    <button class="b_show">Show</button>
+
+    <!-- mouseenter & mouseleave -->
+    <p class="m_enter">Background will change to red when mouse enters and blue if mouse leaves this area</p>
+
+    <img class="size" src="Tree.jpg" style="height: 100px;" alt="">
+    <br>
+    <button class="attr">Change width of image</button>
+
+    <p class="change_element">This will change when buttton is clicked</p>
+    <button class="change">Change</button>
+
+
+    <script>
+        // sliding
+        $(".b1").click(function() {
+            $(".slide").slideUp();
+        });
+        $(".b2").click(function() {
+            $(".slide").slideDown();
+        });
+
+        // Animation
+        $(".animate").click(function() {
+            $(".box").animate({
+                height: "100px"
+            });
+        });
+
+        // fade in
+        $(".f_out").click(function() {
+            $(".fade").fadeOut();
+        });
+        $(".f_in").click(function() {
+            $(".fade").fadeIn();
+        });
+
+        // Hide - show 
+        $(".b_hide").click(function() {
+            $(".hide").hide();
+        });
+        $(".b_show").click(function() {
+            $(".hide").show();
+        });
+
+        // mouseenter
+        $(".m_enter").mouseenter(function() {
+            $(".m_enter").css("background-color", "red");
+        });
+        $(".m_enter").mouseleave(function() {
+            $(".m_enter").css("background-color", "blue");
+        });
+
+        //attr..............................................................................
+        $(".attr").click(function() {
+            $(".size").attr("width", "200px");
+        });
+
+        // Change elements
+        $(".change").click(function() {
+            $(".change_element").html("<strong>Content Changed</strong>")
+        })
+    </script>
+</body>
+
+</html>

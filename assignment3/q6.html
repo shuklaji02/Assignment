@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add data</title>
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        table {
+            margin-top: 20px;
+        }
+        
+        button {
+            background-color: aqua;
+            border-radius: 10%;
+            border: 0.5px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="data">
+            <h3>Please fill the details and press <strong>ADD</strong></h3>
+            <input type="text" id="name" placeholder="Enter your name">
+            <input type="number" id="age" placeholder="Enter your age">
+            <input type="text" id="country" placeholder="Enter your country">
+            <button>Add</button>
+        </div>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+                <td>Abc</td>
+                <td>18</td>
+                <td>India</td>
+            </tr>
+            <tr>
+                <td>Xyz</td>
+                <td>19</td>
+                <td>Canada</td>
+            </tr>
+            <tr>
+                <td>Pqr</td>
+                <td>20</td>
+                <td>Japan</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <!-- JavaScript -->
+    <script>
+        let btnAdd = document.querySelector('button');
+        let table = document.querySelector('table');
+
+        // input select
+        let nameInput = document.querySelector('#name');
+        let ageInput = document.querySelector('#age');
+        let countryInput = document.querySelector('#country');
+
+        //handler function
+        btnAdd.addEventListener('click', () => {
+            let name = nameInput.value;
+            let age = ageInput.value;
+            let country = countryInput.value;
+
+            let template = `
+                <tr>
+                    <td>${name}</td>
+                    <td>${age}</td>
+                    <td>${country}</td 
+                </tr> `;
+
+            // table.innerHTML=table.innerHTML + template; 
+            table.innerHTML += template;
+        });
+    </script>
+
+</body>
+
+</html>
