@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q4</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" crossorigin="anonymous"></script>
+    <style>
+        .container {
+            margin: auto;
+            width: 40%;
+        }
+        
+        canvas {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Represneation in Bar graphs</h3>
+            <canvas id="myChart" width="2500" height="800"></canvas>
+
+            <h2>Represneation in pie chart</h3>
+                <canvas id="d_chart" width="1000" height="880"></canvas>
+    </div>
+
+
+    </div>
+    <script>
+        var Days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday", " "];
+        var Temp = ["33", "30", "35", "27", "24", "15", "20", "0"];
+        var Color = ["blue", "orange", "pink", "violet", "green", "brown", "yellow"];
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: Days,
+                datasets: [{
+                    backgroundColor: Color,
+                    data: Temp
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: "Temperature of past 7 days (c)"
+                }
+            }
+        });
+
+        new Chart("d_chart", {
+            type: "pie",
+            data: {
+                labels: Days,
+                datasets: [{
+                    backgroundColor: Color,
+                    data: Temp
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: "Temperature of past 7 days (c)"
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
+
+</script>
+</body>
+
+</html>
