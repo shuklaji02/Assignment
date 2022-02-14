@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css " crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js " crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js " crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="q10.css">
+    <title>Q10</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="heading">
+            <h1>Checkout Form</h1>
+            <div class="container">
+                <p class="lead">
+                    Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-8 order-0">
+            <h3><strong>Billing Address</strong></h3>
+            <form action="">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="FName">First Name</label>
+                        <input class="name" type="text" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="LName">Last Name</label>
+                        <input class="name" type="text" required>
+                    </div>
+                    <div class="col-md-12 custom">
+                        <label for="Username">Username</label>
+                        <input type="text" class="full" required>
+                    </div>
+                    <div class="col-md-12 custom">
+                        <label for="Email">Email <span class="option">(Optional)</span></label>
+                        <input type="text" class="full" required>
+                    </div>
+                    <div class="col-md-12 custom">
+                        <label for="Address">Address</label>
+                        <input type="text" class="full" required>
+                    </div>
+                    <div class="col-md-12 custom">
+                        <label for="Address">Address 2 <span class="option">(Optional)</span></label>
+                        <input type="text" class="full">
+                    </div>
+                    <div class="col-md-5 custom">
+                        <label for="country">Country</label>
+                        <br>
+                        <select name="" id="country" style="width: 200px;" required>
+                            <option value="ind">India</option>
+                            <option>Russia</option>
+                            <option >USA</option>
+                            <option >none</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 custom">
+                        <label for="state">State</label><br>
+                        <input type="text" required>
+
+                    </div>
+
+                    <div class="col-md-3 custom">
+                        <label for="pin">Pincode</label>
+                        <input type="number" class="pin" required>
+                    </div>
+                    <div class="col-md-12 custom">
+                        <input type="checkbox" name="ship" id="same_ship_address">Shipping address is the same as my billing address <br>
+                        <input type="checkbox" name="save" id="save_for_next">Save this information for next time
+                    </div>
+
+                    <div class="col-md-12 break"></div>
+
+                    <div class="col-md-12 d-block">
+                        <h3><strong>Package</strong></h3>
+                        <input type="radio" name="method" id="credit" value="credit">
+                        <label for="credit">Credit card</label><br>
+                        <input type="radio" name="method" id="debit" value="debit">
+                        <label for="debit">Debit card</label><br>
+                        <input type="radio" name="method" id="paypal" value="paypal">
+                        <label for="Paypal">Paypal</label>
+                        <br> <br>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6 cname">
+
+                            <label for="Card_Name" class="name">Name on Card</label>
+                            <input type="text" required>
+                            <p><small>Full name as displayed on card</small></p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="card_No." class="name">Card Number</label>
+                            <input type="number" maxlength="16" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="expire">Expiration</label>
+                        <input type="month" required>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="cvv">CVV</label>
+                        <input type="password" maxlength="3" placeholder="***" required>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                <br><br>
+            </form>
+
+
+
+        </div>
+        <div class="col-md-4 order-1">
+
+
+            <div>
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Your cart</span>
+                    <span class="badge right">3</span>
+                </h4>
+                <ul>
+
+                    <li class="group-item">
+                        <div class="discription">
+                            <h5 class="my-0">Product name</h5>
+                            <small class="text-muted">Brief description</small> <span class="text-muted right">$12</span>
+                        </div>
+                    </li>
+                    <li class="group-item">
+                        <div class="discription">
+                            <h5 class="my-0">Product name</h5>
+                            <small class="text-muted">Brief description</small> <span class="text-muted right">$12</span>
+                        </div>
+                    </li>
+                    <li class="group-item">
+                        <div class="discription">
+                            <h5 class="my-0">Product name</h5>
+                            <small class="text-muted">Brief description</small> <span class="text-muted right">$12</span>
+                        </div>
+                    </li>
+                    <li class="group-item">
+                        <div class="discription">
+                            <h5 class="my-0">Product name</h5>
+                            <small class="text-muted">Brief description</small> <span class="text-muted right">$12</span>
+                        </div>
+                    </li>
+                    <li class="group-item">
+                        <div class="discription ">
+                            <h5 class="Total">Total<sup>*</sup></h5>
+                            <small class="text-muted">tax not included</small> <span class="text-muted right">$12</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="input-group coupon">
+                <input type="text" class="form-control" placeholder="Promo code">
+                <div class="input-group-append ">
+                    <button type="submit" class="btn btn-success">Redeem</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer">
+        <div class="text-center">
+            &copy; 2071-2018 Company Name <br>
+            <a href="#privacy">Privacy &nbsp;</a>
+            <a href="#terms">Terms &nbsp;</a>
+            <a href="#Support">Support</a>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
